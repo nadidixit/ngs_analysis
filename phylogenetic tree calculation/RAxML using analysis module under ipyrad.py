@@ -1,4 +1,4 @@
-#I used the RAxML funcion (??) available in the ipyrad.analysis module to calculate trees in the maximum likelihood framework. The RAxML function automates the process of generating
+#I used the raxml function (??) available in the ipyrad.analysis module to calculate trees in the maximum likelihood framework. The RAxML function automates the process of generating
 #RAxML command line strings and running them through python code. This script is largely unmodified from that available on the ipyrad site. 
 #!/usr/bin/env python
 # coding: utf-8
