@@ -1,5 +1,5 @@
 # ngs_analysis
-Contains Python and R code (written/borrowed/modified) that was used in the analysis of NGS, specifically GBS, data to infer the spatial-temporal evolutionary history of myrmecophytism in the plant genus Macaranga.
+Contains Python and R code (written/borrowed/modified) and further information on bioinformatic methodology that was employed in the analysis of NGS data, specifically GBS, to infer the spatial-temporal evolutionary history of myrmecophytism in the plant genus Macaranga.
 
 The idea behind this repository is to create a concise collection and documentation of tools and methodologies commonly applied in evolutionary studies that make use of NGS genomic datasets, specifically those generated using restriction-enzyme digestion. I have added suggestions and comments to help the reader through the files. 
 
