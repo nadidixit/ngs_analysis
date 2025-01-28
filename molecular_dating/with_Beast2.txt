@@ -1,0 +1,31 @@
+##Molecular dating with BEAST2 requires a .nex file and a .xml file, which is created on BEAUTi. There is good detailed documentation and tutorials available for this program but I have some comments that may
+help the reader navigate through input files, especially if they've used ipyrad, and model selection. I used BEAST2 to calculate a phylogenetic tree in the Baeysian framework and date it simultaneously. I would strongly 
+recommend reading Drummond et al. (2006) to really understand the concept of molecular dating before going ahead with the analysis. 
+
+##input file: The .nex output file of ipyrad was too large to be loaded onto BEAST2 for me. Using the .usnps output file and formatting it as a .nex file worked out well for me. .usnps records one SNP per locus. If a locus
+has multiple SNPs, then the SNP with the least amount of missing data across all taxa is sampled. If there is comparable amount of missing data acorss all taxa, the SNP is chosen at random. 
+
+##model and parameter specifications: I chose the site model with the help of bModelTest package which can be installed on BEAUTi. In my understanding, bModelTest is the weighted average across all site models, with the weight being proportional to 
+how much posterior support each model gets. This is the recommended method because if there is uncertainty attached to models, committing to a single model may bias estimates. The relaxed uncorrelatd lognormal clock worked best for me and 
+I picked speciation to occur according to a Yule process. Here, checking ess values after each run is a good way to choose the model. Using the Birth-Death model either showed poor convergence or simply showed negligible differnces for me.
+
+##calibrating the tree: Unfortunately, I did not have fossil records to calibrate the tree. Instead, I had to rely on secondary calibration points from another rmolecular dating study. If you are using secondary calibration points,
+I would recommend reading Schenk (2016). Secondary calibration points are not extremely reliable, and are only as good as the study they are obtained from. It is recommended that they are plugged in as uniform distribution priors with
+the upper and lower limit parameters derived from the limits of their 95% HPD intervals. So, a secondary calibrtation point 35 mya (95% HPD: 27.3-38.2 mya) would be coded in as a uniform distribution prior with the lower limit being 27.3 mya 
+and the upper limit being 38.2 mya. 
+
+##checking convergence of MCMC chains: COnvergence of the chain can me monitered on Tracer (I used version 1.7.1). I rarely needed to run for higher than 50,000,000 generations and I sampled every 2000th generation. ess values are a good indicator
+of the quality of the resulting sequeunce. If certain parameters show low ess values (< 200), then trying out alternate models may be a good way to go forward (these steps have good documetation online).
+
+##Final tree: I usually picked the maximum clade credibility tree from teh sampled trees and annotated it using TreeAnnotator and then visualised it on FigTree (these steps have good documetation online).
+
+  
+References: 
+Bouckaert, R., Vaughan, T.G., Barido-Sottani, J., Duchêne, S., Fourment, M.,Gavryushkina, A., Heled, J., Jones, G., Kühnert, D., De maio, N., et al., 2019. BEAST
+2.5: an advanced software platform for Bayesian evolutionary analysis. PLoS Comput. Biol. 15, e1006650
+Bouckaert, R.R., Drummond, A.J., 2017. bModelTest: Bayesian phylogenetic site modelaveraging and model comparison. BMC Evol. Biol. 17, 1–11.
+Drummond, A.J., Ho, S.Y., Phillips, M.J., Rambaut, A., 2006. Relaxed phylogenetics and dating with confidence. PLoS Biology 4, e88.
+Eaton, D.A., Overcast, I., 2020. ipyrad: interactive assembly and analysis of RADseq datasets. Bioinformatics 36, 2592–2594.
+Rambaut, A., Drummond, A.J., Xie, D., Baele, G., Suchard, M.A., 2018. Posterior summarization in Bayesian phylogenetics using Tracer 1.7. Syst. Biol. 67, 901–904.
+Rambaut, 2019. Figtree.
+Schenk, J.J., 2016. Consequences of secondary calibrations on divergence time estimates. PLoS One 11, e0148228.
