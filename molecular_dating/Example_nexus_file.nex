@@ -1,0 +1,10 @@
+#nexus
+begin data;
+  dimensions ntax=3 nchar=11;
+  format datatype=dna missing=N gap=- interleave=no;
+  matrix
+Sample1  GGAATGNNCCT
+Sample2  GCATTCTTCCT
+Sample3  GGNNTC--TCC
+;
+END;
