@@ -1,6 +1,6 @@
 ##Molecular dating with BEAST2 requires a .nex file and a .xml file, which is created on BEAUTi. There is good detailed documentation and tutorials available for this program but I have some comments that may
 help the reader navigate through input files, especially if they've used ipyrad, and model selection. I used BEAST2 to calculate a phylogenetic tree in the Baeysian framework and date it simultaneously. I would strongly 
-recommend reading Drummond et al. (2006) to really understand the concept of molecular dating before going ahead with the analysis. 
+recommend reading Sauquet (2013), who gives a very good overview of molecular dating, to really understand the concept before going ahead with the analysis. 
 
 ##input file: The .nex output file of ipyrad was too large to be loaded onto BEAST2 for me. Using the .usnps output file and formatting it as a .nex file worked out well for me. .usnps records one SNP per locus. If a locus
 has multiple SNPs, then the SNP with the least amount of missing data across all taxa is sampled. If there is comparable amount of missing data acorss all taxa, the SNP is chosen at random. 
@@ -28,4 +28,5 @@ Drummond, A.J., Ho, S.Y., Phillips, M.J., Rambaut, A., 2006. Relaxed phylogeneti
 Eaton, D.A., Overcast, I., 2020. ipyrad: interactive assembly and analysis of RADseq datasets. Bioinformatics 36, 2592–2594.
 Rambaut, A., Drummond, A.J., Xie, D., Baele, G., Suchard, M.A., 2018. Posterior summarization in Bayesian phylogenetics using Tracer 1.7. Syst. Biol. 67, 901–904.
 Rambaut, 2019. Figtree.
+Sauquet, H., 2013. A practical guide to molecular dating. Comptes Rendus Palevol 12(6), 355-367.
 Schenk, J.J., 2016. Consequences of secondary calibrations on divergence time estimates. PLoS One 11, e0148228.
