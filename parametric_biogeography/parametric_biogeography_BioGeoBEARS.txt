@@ -1,0 +1,27 @@
+I performed parametric biogeography by implementing the six biogeographic models defined under the BioGeoBEARS R package. There is an R script that can be used to
+implement the models first-hand. However, there is also a possibility to implement the models using the tool RASP. Before you delve into the actual analysis, it is first
+of all very important to understand what biogeography, especially parametric biogeography, entails. For this, I would recommend starting with reading Sanmartin (2012), 
+which I found to be a very helpful source to gain an overview on the methodology.
+
+BioGeoBEARS is a package which lets you implement different models of biogeographic evolution, each assuming a certain set of processes (
+dispersal, vicariance, sympatric speciation) to be the driving force in shaping geographical distributions. All models are implemented in the maximum likelihood
+framework, which is great, because then you can compare the models through log-likelihood and AIC values and accordingly pick the best model. This is preferable to 
+going into the analysis already assuming a process (welcome to the dispersal vs vicariance schools of thought), which was how biogeography was 
+approached for many years. BioGeoBears is a good way to go forward with your biogeographic analysis. However, I would recommend reading Matzke (2013, thesis abstract) and 
+Matzke (2014) to really understand the models and processes assumed and the parameters involved. It is very important you understand this before you implement the models. 
+
+Implementing the BioGeoBEARS models on RASP is rather straightforward. Choosing discrete geographic areas can be sometimes difficult, but it is an important step
+in this analysis. It is also important to remember that the total number of area combinations scales with the number of discrete areas (n) as 2ˆn, so 
+it is important to ensure that you don't have the number of areas exceeding 10 or so (which is still high I would say). 
+
+
+Refer to: 
+1. Matzke, N. J. (2013). Probabilistic historical biogeography: new models for founder-event speciation, imperfect detection, 
+and fossils allow improved accuracy and model-testing. University of California, Berkeley.
+2. Matzke, N. J. (2014). Model selection in historical biogeography reveals that founder-event speciation is a crucial process
+in island clades. Systematic biology, 63(6), 951-970.
+3. http://phylo.wikidot.com/biogeobears#toc25
+4. Sanmartín, I. (2012). Historical biogeography: evolution in time and space. Evolution: Education and Outreach, 5(4), 555-568.
+5. Yu, Y., Blair, C., & He, X. (2020). RASP 4: ancestral state reconstruction tool for multiple genes and characters. Molecular 
+biology and evolution, 37(2), 604-606.
+
