@@ -1,0 +1,15 @@
+#In addition to the ape package for ancestral state reconstruction, I also implemented similar models in the 
+maximum likelihood framework on the program Mesquite (version 3.70). This is essentailly the same as ape, but some users may find the graphical
+user interfacemore friendly. The Mk1 equal transition rates and AsymmMk unequal transition rates models on Mesquite 
+are synonymous with the ER and ARD models on ape. Like I mentioned, these models are implemented in teh maximum likelihood framework. 
+Mesquite also allows parsimonious reconstructions of ancestral states as well, which can be nice to compare with the likelihood 
+reconstructions. You can also perfrom a hierarchical Bayesian ancestral state reconstruction (Bayesian binary MCMC or BBM) on RASP 
+
+References
+1. Maddison, W.P., Maddison, D.R., 2021. Mesquite: a modular system for evolutionary analysis. Version 3, 70
+2. Paradis, E., Schliep, K., 2019. ape 5.0: an environment for modern phylogenetics and evolutionary analyses 
+in R. Bioinformatics 35, 526–528.
+3. Ronquist, F., Huelsenbeck, J.P., 2003. MrBayes 3: Bayesian phylogenetic inference under mixed models. 
+Bioinformatics 19, 1572–1574. 
+4. Yu, Y., Blair, C., He, X., 2020. RASP 4: ancestral state reconstruction tool for multiple genes and characters. 
+Mol. Biol. Evol. 37, 604–606.
