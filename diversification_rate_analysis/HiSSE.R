@@ -95,3 +95,9 @@ matrix.cid4 <- TransMatMakerHiSSE(hidden.traits=3, make.null=TRUE)
 print(matrix.cid4)
 
 cid4 = hisse(phy = tree, data = data, f=f, turnover = t.cid4, eps = e.cid4, hidden.states = TRUE, trans.rate = matrix.cid4)
+
+#refer to
+#Running the old HiSSE function by Jeremy M. Beaulieu
+#Beaulieu, J. M., & O’Meara, B. C. (2016). Detecting hidden 
+#diversification shifts in models of trait-dependent speciation and extinction. Systematic biology, 65(4), 583-601.
+#Beaulieu, J. M., & O’Meara, B. C. (2016). hisse: Hidden State Speciation and Extinction. R package version 1.8.
