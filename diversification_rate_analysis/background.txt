@@ -1,0 +1,2 @@
+Heads-up, it has been a while since I have handled diversification rate analsysis methods under HiSSE, BiSSE, and BAMM. 
+What I do remember is that 
