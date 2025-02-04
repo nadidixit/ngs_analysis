@@ -1,5 +1,6 @@
-##This is an example parameter file for assembling R1 and R2 reads obtained from GBS (genotyping-by-sequencing) that used Illumina paired-end sequencing. 
-##For general comments and suggestions from me on the assembly process, check the "example parameter file for assembling R1 reads.txt" file in this repository.
+##This is an example parameter file for assembling R1 and R2 reads obtained from GBS (genotyping-by-sequencing) that used 
+##Illumina paired-end sequencing. For general comments and suggestions from me on the assembly process, check the 
+##"example parameter file for assembling R1 reads.txt" file in this repository.
 ##To work with both R1 and R2 in ipyrad, it is important that all file names include either _R1_ or _R2_ as an identifier. 
 
 ------- ipyrad params file (v.0.9.94)-------------------------------------------
@@ -11,9 +12,11 @@ assembly_name                     ## [0] [assembly_name]: Assembly name. Used to
 denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference)
                                ## [6] [reference_sequence]: Location of reference sequence file
 pairddrad                      ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
-                               ##Me It is important to choose this parameter value if you are working with the paired reads (R1 and R2)
+                               ##Me It is important to choose this parameter value if you are working with 
+                               ##the paired reads (R1 and R2)
 TGCAG, CWG                     ## [8] [restriction_overhang]: Restriction overhang (cut1,) or (cut1, cut2)
-                               ##Me sometimes two restriction enzymes (a common cutter and a rare cutter) are used in GBS. if you are using paired reads, 
+                               ##Me sometimes two restriction enzymes (a common cutter and a rare cutter) are used in GBS. 
+                               ##if you are using paired reads, 
                                ##it is important to look this up and plug in the appropriate restriction overhangs
 5                              ## [9] [max_low_qual_bases]: Max low quality base calls (Q<20) in a read
 33                             ## [10] [phred_Qscore_offset]: phred Q score offset (33 is default and very standard)
@@ -22,7 +25,7 @@ TGCAG, CWG                     ## [8] [restriction_overhang]: Restriction overha
 10000                          ## [13] [maxdepth]: Max cluster depth within samples
 0.90                           ## [14] [clust_threshold]: Clustering threshold for de novo assembly
 0                              ## [15] [max_barcode_mismatch]: Max number of allowable mismatches in barcodes
-0                           ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
+0                              ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
 35                             ## [17] [filter_min_trim_len]: Min length of reads after adapter trim
 2                              ## [18] [max_alleles_consens]: Max alleles per site in consensus sequences
 0.05                           ## [19] [max_Ns_consens]: Max N's (uncalled bases) in consensus
