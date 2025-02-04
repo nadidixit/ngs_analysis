@@ -1,5 +1,7 @@
-##This is an example parameter file for denovo (no reference) assembling of R1 reads obtained from genotyping-by-sequencing (GBS) that used paired-end Illumina sequencing. The file has default 
-##comments from the authors of the program, and some added recommendations from me (##Me). In my experience, using R1 reads was sufficient, but that could also be because my sequence data was great. 
+##This is an example parameter file for denovo (no reference) assembling of R1 reads obtained from genotyping-by-sequencing 
+##(GBS) that used paired-end Illumina sequencing. The file has default comments from the authors of the program, 
+##and some added recommendations from me (##Me). In my experience, using R1 reads was sufficient, but that could 
+##also be because my sequence data was great. 
 ##I had around 1-1.5 million reads per sample. 
 
 ------- ipyrad params file (v.0.9.31)-------------------------------------------
