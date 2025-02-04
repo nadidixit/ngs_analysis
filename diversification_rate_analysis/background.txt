@@ -21,8 +21,8 @@ The implementation of BiSSE is through different evolutionary models whose param
 rates (lambda0 and lambda1) and extinction rates (mu0 and mu1) for different states and transition rates 
 between these states(q01 and q10). Each model is initiated by constraining the relationships between these 
 parameters. For example, lambda1 != lambda0, mu1 != mu0, q01!= q10 is a model which assumes there is a difference 
-in speciation and extinction rates between lineages-0 and lineages-1 and that the rate of transition from  0 to 1 is 
-different is unequal to the rate of transition from 1 to 0. These parameters are estimated in the max likelihood framework. 
+in speciation and extinction rates between lineages-0 and lineages-1 and that the rate of transition from  0 to 1 
+is unequal to the rate of transition from 1 to 0. These parameters are estimated in the max likelihood framework. 
 However, you can use the parameters that maximised the likelihood as priors and estimate parameters in the Bayesian 
 framework as well. 
 
