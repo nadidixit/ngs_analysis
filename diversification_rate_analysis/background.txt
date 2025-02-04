@@ -11,14 +11,30 @@ trait-dependent methods (BiSSE and HiSSE) and trait-independent methods (BAMM). 
 if there is a difference in diversification rates between lineages that are characterised by different states. For example,
 lineages with wings and lineages without wings. Under BiSSE, you check this for a binary trait with two states: 0 and 1 (which are a stand-in for two states of any binary character). So you are essentially checking if there is a difference in diversification rates between lineages in state 0 and lineages in state 1. The question that can arise now is: what if there is a difference, but this difference is caused by a "hidden trait" that you have not considered in your analysis or are not seeing? This is where HiSSE comes in. HiSSE considers hidden states A and B that can be associated with the obvious states 0 and 1. So you have combinations of states 1A, 1B, 0A, 0B. You can also implement models with two or four hidden states as well. 
 
-The implementation of BiSSE is through different evolutionary models whose parameters are speciation rates (lambda0 and lambda1) and extinction rates (mu0 and mu1) for different states and transition rates between these states(q01 and q10). Each model is initiated by constraining the relationships between these parameters. For example, lambda1 != lambda0, mu1 != mu0, q01 != q10 is a model which assumes there is a difference in speciation and extinction rates between lineages-0 and lineages-1 and that the rate of transition from  0 to 1 is different is unequal to the rate of transition from 1 to 0. These parameters are estimated in the max likelihood framework. However, you can use the parameters that maximised the likelihood as priors and estimate parameters in the Bayesian framework as well. 
+The implementation of BiSSE is through different evolutionary models whose parameters are speciation rates (lambda0 and lambda1) and extinction rates (mu0 and mu1) for different states and transition rates between these states(q01 and q10). Each 
+model is initiated by constraining the relationships between these parameters. For example, lambda1 != lambda0, mu1 != mu0, q01
+!= q10 is a model which assumes there is a difference in speciation and extinction rates between lineages-0 and lineages-1 
+and that the rate of transition from  0 to 1 is different is unequal to the rate of transition from 1 to 0. These parameters
+are estimated in the max likelihood framework. However, you can use the parameters that maximised the likelihood as priors
+and estimate parameters in the Bayesian framework as well. 
 
-The implementation of HiSSE is a bit more complicated because of the number of state combinations and the number of transition rates that arise as a result. Each state (1A, 1B, 0A, 0B) is associated with a speciation and extinction rate, which is straightforward enough, but the transition rates between all these states are defined in a transition matrix. Trust me, sit with this for some time, and you will love it when you actually understand the transition matrix. RevBayes (https://revbayes.github.io/tutorials/sse/hisse.html) has a great schematic that will help you get an overview of HiSSE at the onset. 
+The implementation of HiSSE is a bit more complicated because of the number of state combinations and the number of 
+transition rates that arise as a result. Each state (1A, 1B, 0A, 0B) is associated with a speciation and extinction rate, 
+which is straightforward enough, but the transition rates between all these states are defined in a transition matrix. Trust 
+me, sit with this for some time, and you will love it when you actually understand the transition matrix. 
+RevBayes (https://revbayes.github.io/tutorials/sse/hisse.html) has a great schematic that will help you get an overview of HiSSE at the onset. 
 
-BAMM is a trait-independent method where characters or their states are not taken into consideration at all. It is an analysis whose aim it is to detect significant rate shits in phylogenetic trees. This is implemented in a Bayesian framework, by the way. BAMM has detailed documentation online (https://bamm-project.org/). Reading it first is very helpful. This method has some criticisms, and authors have gone back and forth debating the efficacy of BAMM. 
+BAMM is a trait-independent method where characters or their states are not taken into consideration at all. It is an 
+analysis whose aim it is to detect significant rate shits in phylogenetic trees. This is implemented in a Bayesian framework, 
+by the way. BAMM has detailed documentation online (https://bamm-project.org/). Reading it first is very helpful. This method
+has some criticisms, and authors have gone back and forth debating the efficacy of BAMM. 
 
-**Remember, the use of these methods in evolutionary analyses is somewhat controversial, both from the perspective of the methodology and assumptions (especially their use in establishing "key innovations"). There are also studies about
-the limitations of these methods and the variation of their power with sample size, despite the fact that you can account for incomplete sampling (Davies et al., 2013; Kodandaramaiah & Murali, 2018). I would suggest reading them to actaully get a good idea of what these methods are doing and what their limitations are instead of being very excited about your results. I would be cautious when interpreting results obtained from these analyses. 
+**Remember, the use of these methods in evolutionary analyses is somewhat controversial, both from the perspective of 
+the methodology and assumptions (especially their use in establishing "key innovations"). There are also studies 
+about the limitations of these methods and the variation of their power with sample size, despite the fact that you can 
+account for incomplete sampling (Davies et al., 2013; Kodandaramaiah & Murali, 2018). I would suggest reading them to 
+Actually get a good idea of what these methods are doing and what their limitations are instead of being very excited 
+about your results. I would be cautious when interpreting results obtained from these analyses. 
 
 References: 
 1. FitzJohn, R.G., 2012. Diversitree: comparative phylogenetic analyses of diversification in
