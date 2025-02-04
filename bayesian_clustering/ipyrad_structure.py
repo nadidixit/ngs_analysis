@@ -1,9 +1,14 @@
-#For population clustering analysis, I used the structure module within the analysis subpackage of ipyrad. This script is mostly unmodified from that on the ipyrad site, but I made a few changes to the way 
-#SNPs are filtered using the imap dictionary. Although ipyrad.analysis.structure is a very useful tool, I strongly recommend reading the STRUCTURE documentation (cited at the end as comment)
+#For population clustering analysis, I used the structure module within the analysis subpackage of ipyrad. This 
+#script is mostly unmodified from that on the ipyrad site, but I made a few changes to the way 
+#SNPs are filtered using the imap dictionary. Although ipyrad.analysis.structure is a very useful tool, 
+#I strongly recommend reading the STRUCTURE documentation (cited at the end as comment)
 #available on the Pritchard Lab site to familiarize yourself with the different parameter and model options. 
-#Best K vaule is determined with the Evanno method here, but since this method has its own shortcomings, I recommend checking the plots for multiple K values and going with the 
-#one that seems biologically the most informative, regardless of the deltaK values. I would also suggest going with a fist batch of assumed K values (for example 2, 3, 4, 5, 6) 
-#and then checking how the plots change with differnt K values. You can stop to include higher K values when the plots remain unchanged and start showing 
+#Best K vaule is determined with the Evanno method here, but since this method has its own shortcomings, 
+#I recommend checking the plots for multiple K values and going with the 
+#one that seems biologically the most informative, regardless of the deltaK values. I would also suggest going 
+#with a fist batch of assumed K values (for example 2, 3, 4, 5, 6) 
+#and then checking how the plots change with differnt K values. You can stop to include higher 
+#K values when the plots remain unchanged and start showing 
 #a "horizontal patterning" (you will know it when you see it)
 
 #!/usr/bin/env python
@@ -24,12 +29,16 @@ data = "./ipyrad_output_file.snps.hdf5"
 
 
 # In[3]:
-#intiate a structure object. In the ipyrad tutorial, two parameters imap and minmap are also used to filter SNPs. I had an issue with this method and I left it out. 
-#imap is essentially a dcitionary where you group your samples into "presumed populations" (or even species). minmap is a percentage value (say x) which is used 
-#to include SNPs that are present in at least x proportion of the samples in each group (as defined in imap). Since this filtration is based
-#on assumed populations and the point of STRUCTURE is to discern distinct populations, this step can potentially bias your results by including
-#SNPs common to predefined populations. I found this problematic, and hence only included mincov which is used to filter out SNPs that are present 
-#in less than a certain proportion of all samples (not dependent on any predefined grouping). I did initiate an imap dictionary later on, but this was used only to 
+#intiate a structure object. In the ipyrad tutorial, two parameters imap and minmap are also used to filter SNPs. 
+#I had an issue with this method and I left it out. 
+#imap is essentially a dictionary where you group your samples into "presumed populations" (or even species). 
+#minmap is a percentage value (say x) which is used 
+#to include SNPs that are present in at least x proportion of the samples in each group (as defined in imap). 
+#Since this filtration is based on assumed populations and the point of STRUCTURE is to discern distinct populations, 
+#this step can potentially bias your results by including SNPs common to predefined populations. I found this 
+#problematic, and hence only included mincov which is used to filter out SNPs that are present 
+#in less than a certain proportion of all samples (not dependent on any predefined grouping). 
+#I did initiate an imap dictionary later on, but this was used only to 
 #determine the order of samples in the plot
 struct1 = ipa.structure(
 name = "analysis1.str",
@@ -38,15 +47,18 @@ mincov = 0.75)
 
 
 # In[4]:
-#In the STRUCTURE documentation, Pritchard suggets that a run length of 100,000 is usually sufficent. As of now, it is not possible to check for convergence
+#In the STRUCTURE documentation, Pritchard suggests that a run length of 100,000 is usually sufficient. 
+#As of now, it is not possible to check for convergence
 #with the ipyrad.analysis.structure tool
 struct1.mainparams.burnin = 50000
 struct1.mainparams.numreps = 100000
 
 
 # In[5]:
-#You can print the paramter values with the following two commands. Most values are deafult vlaues recommended in the STRUCTURE docuemtation (cited at the end as comment) with the
-#"admixture" ancestry model chosen. You can, of course, change them if you like. The default values and the admixture model were appropriate for my 
+#You can print the parameter values with the following two commands. Most values are default values recommended in 
+#the STRUCTURE docuemtation (cited at the end as comment) with the
+#"admixture" ancestry model chosen. You can, of course, change them if you like. 
+#The default values and the admixture model were appropriate for my 
 #data and they worked well for me. 
 
 print(struct1.mainparams)
@@ -100,7 +112,8 @@ axes.x.label.text = "K (N ancestral populations)"
 
 
 # In[10]:
-#saving the plot as a .png file. You can also save it as a pdf by using toyplot.pdf.render(), but you need to import the toyplot.pdf module first.
+#saving the plot as a .png file. You can also save it as a pdf by using toyplot.pdf.render(), 
+#but you need to import the toyplot.pdf module first.
 toyplot.png.render(canvas, "deltaK.png")
 
 
@@ -135,7 +148,8 @@ axes.x.ticks.labels.style = {"font-size": "12px"}
 
 
 # In[14]:
-#I would recommend to plot barplots for many k values and checking which one seems more relevant and informative, regardless of the deltak vlaues
+#I would recommend plotting bar plots for many k values and checking which one seems more relevant and informative, 
+#regardless of the deltak values
 toyplot.png.render(canvas, "k2_plot.png")
 
 
