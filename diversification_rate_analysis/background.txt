@@ -6,10 +6,15 @@ I have not gone into too much detail because I don't want to spend time revisiti
 
 Here is some background and source material which could potentially be a good starting point: 
 
-BiSSE, BAMM, and HiSSE are all diversification rate analysis methods but they can be classified into two kinds:
-trait-dependent methods (BiSSE and HiSSE) and trait-independent methods (BAMM). Trait-dependent methods tell you
-if there is a difference in diversification rates between lineages that are characterised by different states. For example,
-lineages with wings and lineages without wings. Under BiSSE, you check this for a binary trait with two states: 0 and 1 (which are a stand-in for two states of any binary character). So you are essentially checking if there is a difference in diversification rates between lineages in state 0 and lineages in state 1. The question that can arise now is: what if there is a difference, but this difference is caused by a "hidden trait" that you have not considered in your analysis or are not seeing? This is where HiSSE comes in. HiSSE considers hidden states A and B that can be associated with the obvious states 0 and 1. So you have combinations of states 1A, 1B, 0A, 0B. You can also implement models with two or four hidden states as well. 
+BiSSE, BAMM, and HiSSE are all diversification rate analysis methods but they can be classified into two 
+kinds: trait-dependent methods (BiSSE and HiSSE) and trait-independent methods (BAMM). Trait-dependent methods tell 
+youif there is a difference in diversification rates between lineages that are characterised by different states. For 
+example,lineages with wings and lineages without wings. Under BiSSE, you check this for a binary trait with two states: 0 and 
+1 (which are a stand-in for two states of any binary character). So you are essentially checking if there is a difference 
+in diversification rates between lineages in state 0 and lineages in state 1. The question that can arise now is: what if 
+there is a difference, but this difference is caused by a "hidden trait" that you have not considered in your analysis or 
+are not seeing? This is where HiSSE comes in. HiSSE considers hidden states A and B that can be associated with the obvious states 0 and 1. So you have combinations of states 1A, 1B, 0A, 0B. You can also implement models with two or four hidden 
+states as well. 
 
 The implementation of BiSSE is through different evolutionary models whose parameters are speciation rates (lambda0 and lambda1) and extinction rates (mu0 and mu1) for different states and transition rates between these states(q01 and q10). Each 
 model is initiated by constraining the relationships between these parameters. For example, lambda1 != lambda0, mu1 != mu0, q01
