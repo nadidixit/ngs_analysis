@@ -15,7 +15,7 @@ in diversification rates between lineages in state 0 and lineages in state 1. Th
 there is a difference, but this difference is caused by a "hidden trait" that you have not considered in your analysis or 
 are not seeing? This is where HiSSE comes in. HiSSE considers hidden states A and B that can be associated with the obvious 
 states 0 and 1. So you have combinations of states 1A, 1B, 0A, 0B. You can also implement models with two or four hidden 
-states as well. 
+states. 
 
 The implementation of BiSSE is through different evolutionary models whose parameters are speciation 
 rates (lambda0 and lambda1) and extinction rates (mu0 and mu1) for different states and transition rates 
