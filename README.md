@@ -7,8 +7,13 @@ Deeper description: This repository mostly captures the methodology used in the 
 
 References:
 Eaton, D.A., Overcast, I., 2020. ipyrad: interactive assembly and analysis of RADseq datasets. Bioinformatics 36, 2592–2594. https://doi.org/10.1093/bioinformatics/btz966.
+
 Bouckaert, R., Vaughan, T.G., Barido-Sottani, J., Duchêne, S., Fourment, M.,Gavryushkina, A., Heled, J., Jones, G., Kühnert, D., De maio, N., et al., 2019. BEAST 2.5: an advanced software platform for Bayesian evolutionary analysis. PLoS Comput. Biol. 15, e1006650
+
 Yu, Y., Blair, C., He, X., 2020. RASP 4: ancestral state reconstruction tool for multiple genes and characters. Mol. Biol. Evol. 37, 604–606.
+
 Maddison, W.P., Maddison, D.R., 2021. Mesquite: a modular system for evolutionary analysis. Version 3, 70.
+
 Dixit, N.M., Zirpel, M., Slik, J.W., Jamsari, J., Weising, K., Guicking, D., 2023. Biogeography of the Sunda Shelf revisited: insights from Macaranga section Pruinosae (Euphorbiaceae). Front. Ecol. Evol. 10, 1049243.
+
 Dixit, N. M., & Guicking, D., 2024. Exploring the evolutionary dynamics of myrmecophytism: Perspectives from the Southeast Asian Macaranga ant-plant symbiosis. Molecular Phylogenetics and Evolution 194, 108028.
